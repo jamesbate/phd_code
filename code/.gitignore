@@ -1,0 +1,7 @@
+archives/
+MATLAB/ 
+ref/
+
+#why don't these work?
+.vscode/
+__pycache__

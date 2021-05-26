@@ -1,0 +1,24 @@
+
+<SAVE FORM>
+  .dat   ;   %1.5f
+  PMTcounts;   1;sum; 		(0:N);		%1.5f
+  APDTotalcounts;   1;sum; 		(0:N);		%1.5f
+  APD0counts;   1;sum; 		(0:N);		%1.5f
+  APD1counts;   1;sum; 		(0:N);		%1.5f
+  
+  ---------
+  # addPMTcounts: All other sections insteat of the last PMT data section.
+  
+  PMTcounts;   1;elements;      (0:N);          %1.0f   # this is alwas last pmt, so is PMTdet (0:249)
+  
+  addPMTcounts;   2;elements;   (0);(0:N);      %1.0f   # this is doppler colling, (0):(0:249)
+  addPMTcounts;   2;elements;   (1);(0:N);      %1.0f   # this is pmt_procc, (1):(0:249)
+  
+  addPMTcounts;   2;elements;   (0:1);(0:N);    %1.0f   # this is dopr and pmt_procc, (0:1):(0:249)
+  addPMTcounts;   2;elements;   (0:N);(0:N);    %1.0f   # this is dopr and pmt_procc, (0:1):(0:249)
+  
+  addPMTcounts;   2;sum;        (0);(0:N);      %1.0f   # this is summ of dopp   (0)
+  addPMTcounts;   2;sum;        (0:1);(0:N);    %1.0f   # this is summ of dopp and pmt_procc (0)
+  ---------
+  
+</SAVE FORM>
